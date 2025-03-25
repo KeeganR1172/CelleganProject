@@ -1,6 +1,6 @@
 %% Load data
-load("Connectome\GHermChem.mat")
-load("Connectome\GHermElec_sym.mat")
+%load("Connectome\GHermChem.mat")
+%load("Connectome\GHermElec_sym.mat")
 %%
 t = tiledlayout(1,2);
 fig1 = nexttile(t, 1);
@@ -87,7 +87,7 @@ end
 
 %StartNode = GHermChem.Nodes.Name(GHermChem.findnode("dBWML1"));
 function  nodefig = HermChemNodeConns(StartNode, depth)
-    load("Connectome\GHermChem.mat")
+%    load("Connectome\GHermChem.mat")
     
     %StartNode = BodyWallMuscles(6:10);
     PredNode = StartNode;
@@ -158,7 +158,7 @@ function  nodefig = HermChemNodeConns(StartNode, depth)
 end
 
 %% test for successors of BWMs
-test = 0;
-for i = 1:95
-    test = [test; successors(GHermChem, BodyWallMuscles(i))];
-end
+% test = 0;
+% for i = 1:95
+%     test = [test; successors(GHermChem, BodyWallMuscles(i))];
+% end
