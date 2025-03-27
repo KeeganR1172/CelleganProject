@@ -1,4 +1,4 @@
-
+mdl = "BiorlWalkingBipedRobot";
 numObs = 29;
 obsInfo = rlNumericSpec([numObs 1]);
 obsInfo.Name = "observations";
