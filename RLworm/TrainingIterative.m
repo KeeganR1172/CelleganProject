@@ -1,10 +1,13 @@
-mdl = "BiorlWalkingBipedRobot";
-numObs = 29;
+robotParametersRL
+numObs = 35;
 obsInfo = rlNumericSpec([numObs 1]);
 obsInfo.Name = "observations";
-numAct = 4;
+
+numAct = 6;
 actInfo = rlNumericSpec([numAct 1],LowerLimit=-1,UpperLimit=1);
 actInfo.Name = "foot_torque";
+AgentSelection = "DDPG";
+mdl = "Copy_9_of_rlWalkingBipedRobot";
 blk = mdl + "/RL Agent";
 env = rlSimulinkEnv(mdl,blk,obsInfo,actInfo);
 env.ResetFcn = @(in) walkerResetFcn(in, ...
@@ -12,7 +15,7 @@ env.ResetFcn = @(in) walkerResetFcn(in, ...
     lower_leg_length/100, ...
     h/100);
 
-AgentSelection = "DDPG";
+
 switch AgentSelection
     case "DDPG"
         agent = createDDPGAgent(numObs,obsInfo,numAct,actInfo,Ts);
